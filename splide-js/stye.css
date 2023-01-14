@@ -38,3 +38,9 @@
   align-items: center;
   margin-left: -30% !important;
 }
+
+/* Video */
+.video {
+  height: 100vh;
+  background-color: green;
+}
