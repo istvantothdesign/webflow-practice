@@ -1,0 +1,40 @@
+.test {
+  background: green;
+  height: 500px;
+  width: 500px;
+}
+.test.is-1 {
+  background: yellow;
+  align-self: flex-start;
+}
+.test.is-2 {
+  background: blue;
+}
+.test.is-3 {
+  background: red;
+  align-self: flex-start;
+}
+.test.is-4 {
+  background: orange;
+}
+
+.slide-wrp {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.slide-ul {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.slide-li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -30% !important;
+}
