@@ -9,75 +9,14 @@
   </head>
   <body>
     <!-- shopify -->
-
-    <p class="line-item-property__field">
-      <label>Your name</label><br />
-      <select id="your-name" name="properties[Your name]">
-        <option value="test">
-          {{ product.metafields.custom.course_1_dates | date: "%d %B, %Y" }}
-        </option>
-      </select>
-    </p>
-
-    <p class="line-item-property__field">
-      <select
-        class="select__select"
-        id="icon"
-        name="properties[Design]"
-        data-class="properties_design"
-        form="{{ product_form_id }}"
-      >
-        <option value="Antlers">Antlers</option>
-        <option value="Arrows">Arrows</option>
-      </select>
-    </p>
-
-    <!-- v2 -->
-
-    <p class="line-item-property__field">
-        <select
-          class="select__select"
-          id="icon"
-          name="properties[Design]"
-          data-class="properties_design"
-          form="{{ product_form_id }}"
+    <form id="123">
+      <div class="attendees">
+        <a class="button button--full-width button--secondary" href="#"
+          >Add more attendees</a
         >
-          <option value="Antlers">Antlers</option>
-          <option value="Arrows">Arrows</option>
-        </select>
-      </p>
-  
-      {% assign dates = product.metafields.custom.course_1_dates | split: "," %}
-{% if dates %}
-  <select name="event_date">
-    {% for date in dates %}
-      <option value="{{ date }}">{{ date | date: "%B %d, %Y" }}</option>
-    {% endfor %}
-  </select>
-{% endif %}
+      </div>
+    </form>
 
-
-
-    <!-- Working  -->
-
-    {% assign dates = product.metafields.custom.course_1_dates | split: "," %}
-    {% if dates %}
-
-      <select
-        class="select__select"
-        id="icon"
-        name="properties[Design]"
-        data-class="properties_design"
-        form="{{ product_form_id }}"
-      >
-        {% for date in dates %}
-        <option value="{{ date }}">{{ date | date: "%B %d, %Y" }}</option>
-        {% endfor %}
-      </select>
-   
-      {% endif %}
-  
-      <script src="./app.js"></script>
-    </p>
+    <script src="./product-attendees.js" type="text/javascript"></script>
   </body>
 </html>
