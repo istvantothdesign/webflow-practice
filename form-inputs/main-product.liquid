@@ -1,0 +1,71 @@
+<!-- Working YOLO - Add this to the main-product.liquid template file in shopify -->
+
+{% assign dates = product.metafields.custom.course_1_dates | split: "," %}
+{% if dates %}
+  <select
+    class="select__select"
+    id="icon"
+    name="properties[Date]"
+    data-class="properties_date"
+    form="{{ product_form_id }}">
+    {% for date in dates %}
+      <option value="{{ date | date: "%B %d, %Y" }}">{{ date | date: "%B %d, %Y" }}</option>
+    {% endfor %}
+  </select>
+{% endif %}
+
+<!-- Adding input fields -->
+<p class="line-item-property__field">
+  <label for="first-name">First Name</label>
+  <input
+    required
+    class="required"
+    id="first-name"
+    type="text"
+    name="properties[First Name]"
+    form="{{ product_form_id }}">
+</p>
+
+<p class="line-item-property__field">
+  <label for="last-name">Last Name</label>
+  <input
+    required
+    class="required"
+    id="last-name"
+    type="text"
+    name="properties[Last Name]"
+    form="{{ product_form_id }}">
+</p>
+
+<p class="line-item-property__field">
+  <label for="age">Age</label>
+  <input
+    required
+    class="required"
+    id="age"
+    type="text"
+    name="properties[Age]"
+    form="{{ product_form_id }}">
+</p>
+
+<p class="line-item-property__field">
+  <label for="contact-number">Contact Number</label>
+  <input
+    required
+    class="required"
+    id="contact-number"
+    type="text"
+    name="properties[Contact Number]"
+    form="{{ product_form_id }}">
+</p>
+
+<p class="line-item-property__field">
+  <label for="email-address">Email Address</label>
+  <input
+    required
+    class="required"
+    id="email-address"
+    type="text"
+    name="properties[Email Address]"
+    form="{{ product_form_id }}">
+</p>

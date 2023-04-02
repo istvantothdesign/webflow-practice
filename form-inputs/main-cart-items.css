@@ -1,0 +1,8 @@
+/* Add this to the main-cart-items.liquid template file in shopify admin */
+
+.quantity.cart-quantity {
+  pointer-events: none;
+}
+.quantity.cart-quantity button {
+  display: none;
+}

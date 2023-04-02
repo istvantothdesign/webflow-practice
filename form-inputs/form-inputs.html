@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Inputs</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- shopify -->
+
+    <p class="line-item-property__field">
+      <label>Your name</label><br />
+      <select id="your-name" name="properties[Your name]">
+        <option value="test">
+          {{ product.metafields.custom.course_1_dates | date: "%d %B, %Y" }}
+        </option>
+      </select>
+    </p>
+
+    <p class="line-item-property__field">
+      <select
+        class="select__select"
+        id="icon"
+        name="properties[Design]"
+        data-class="properties_design"
+        form="{{ product_form_id }}"
+      >
+        <option value="Antlers">Antlers</option>
+        <option value="Arrows">Arrows</option>
+      </select>
+    </p>
+
+    <!-- v2 -->
+
+    <p class="line-item-property__field">
+        <select
+          class="select__select"
+          id="icon"
+          name="properties[Design]"
+          data-class="properties_design"
+          form="{{ product_form_id }}"
+        >
+          <option value="Antlers">Antlers</option>
+          <option value="Arrows">Arrows</option>
+        </select>
+      </p>
+  
+      {% assign dates = product.metafields.custom.course_1_dates | split: "," %}
+{% if dates %}
+  <select name="event_date">
+    {% for date in dates %}
+      <option value="{{ date }}">{{ date | date: "%B %d, %Y" }}</option>
+    {% endfor %}
+  </select>
+{% endif %}
+
+
+
+    <!-- Working  -->
+
+    {% assign dates = product.metafields.custom.course_1_dates | split: "," %}
+    {% if dates %}
+
+      <select
+        class="select__select"
+        id="icon"
+        name="properties[Design]"
+        data-class="properties_design"
+        form="{{ product_form_id }}"
+      >
+        {% for date in dates %}
+        <option value="{{ date }}">{{ date | date: "%B %d, %Y" }}</option>
+        {% endfor %}
+      </select>
+   
+      {% endif %}
+  
+      <script src="./app.js"></script>
+    </p>
+  </body>
+</html>
